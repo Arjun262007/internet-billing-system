@@ -2,13 +2,8 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout Source Code') {
-            steps {
-                // Pulls the code from your specific GitHub repository
-                git branch: 'main', url: 'https://github.com'
-            }
-        }
-
+        // We removed the broken manual checkout stage because Jenkins handles it automatically
+        
         stage('Compile Application') {
             steps {
                 // Compiles the source files
@@ -32,4 +27,4 @@ pipeline {
         }
     }
 }
-    
+
